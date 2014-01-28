@@ -1,3 +1,4 @@
+//Starting with an arraylist, hashmap later to make it more efficient?
 import java.util.*;
 
 
@@ -6,7 +7,21 @@ public class Ingredients {
 	public List<String> ingredientsChosen = new ArrayList<String>();
 	
 	public Ingredients(){
-		
+		int x = 0;
+		String temp;
+		Scanner user_input = new Scanner( System.in );
+		String ingredient;
+		System.out.print("Enter an ingredient you have: ");
+		ingredient=user_input.next();
+		while(x<ingredientList.size()){
+			if(ingredient.equals(ingredientList.get(x))){
+				temp = ingredientList.get(x);
+				ingredientsChosen.add(temp);
+			}
+			else{
+				System.out.println("Ingredient not on list");
+			}
+		}
 	}
 	public void CreateIngredient(String newIng){
 		ingredientList.add(newIng);
